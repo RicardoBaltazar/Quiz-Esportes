@@ -43,7 +43,7 @@ export default function Home() {
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl=''/>
+      <GitHubCorner projectUrl='https://github.com/RicardoBaltazar/Quiz-Esportes'/>
     </QuizBackground>
 
   )
