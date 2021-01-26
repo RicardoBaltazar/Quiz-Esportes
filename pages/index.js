@@ -25,6 +25,10 @@ export const QuizContainer = styled.div`
 
 
 export default function Home() {
+  const router = useRouter();
+  const [ name, setName ] = React.useState('');
+
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
@@ -40,12 +44,15 @@ export default function Home() {
           <Widget.Content>
             <form onSubmit={function(event){
               event.preventDefault();
-              const name = 'Ricardo';
               router.push(`/quiz?name=${name}`);
             }}>
-              <input placeholder='Digite seu nome' />
-              <button type="submit">
-                jogar {seuNome}
+              <input 
+              onChange={function(event){
+                setName(event.target.value);
+              }}
+              placeholder='Digite seu nome' />
+              <button type="submit" disabled={name.length === 0}>
+                jogar {name}
               </button>
             </form>
           </Widget.Content>
