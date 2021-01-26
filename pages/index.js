@@ -1,9 +1,13 @@
-import styled from 'styled-components'
-import db from '../db.json'
-import Widget from '../src/Components/Widget'
-import QuizBackground from '../src/Components/QuizBackground'
-import GitHubCorner from '../src/Components/GitHubCorner'
-import Footer from '../src/Components/Footer'
+import styled from 'styled-components';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+
+import db from '../db.json';
+import Widget from '../src/Components/Widget';
+import QuizBackground from '../src/Components/QuizBackground';
+import GitHubCorner from '../src/Components/GitHubCorner';
+import Footer from '../src/Components/Footer';
+
 
 
 
@@ -23,13 +27,27 @@ export const QuizContainer = styled.div`
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>
+          Quiz Esportes
+        </title>
+      </Head>
       <QuizContainer>
         <Widget>
           <Widget.Header>
             <h1>Titulo</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>asdasdasdas</p>
+            <form onSubmit={function(event){
+              event.preventDefault();
+              const name = 'Ricardo';
+              router.push(`/quiz?name=${name}`);
+            }}>
+              <input placeholder='Digite seu nome' />
+              <button type="submit">
+                jogar {seuNome}
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
 
@@ -43,7 +61,7 @@ export default function Home() {
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl='https://github.com/RicardoBaltazar/Quiz-Esportes'/>
+      <GitHubCorner projectUrl='https://github.com/RicardoBaltazar/Quiz-Esportes' />
     </QuizBackground>
 
   )
