@@ -4,25 +4,13 @@ import { useRouter } from 'next/router';
 
 import db from '../db.json';
 import Widget from '../src/Components/Widget';
+import QuizContainer from '../src/Components/QuizContainer';
 import QuizBackground from '../src/Components/QuizBackground';
 import GitHubCorner from '../src/Components/GitHubCorner';
 import Footer from '../src/Components/Footer';
 import Input from '../src/Components/Input'
 import Button from '../src/Components/Button'
 
-
-
-
-export const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
 
 
 
@@ -57,12 +45,13 @@ export default function Home() {
               value={name}
               />
               <Button type="submit" disabled={name.length === 0}>
-                jogar {name}
+                {`Jogar ${name}`}
               </Button>
             </form>
           </Widget.Content>
         </Widget>
 
+        {/*
         <Widget>
           <Widget.Header>
             <h1>Titulo</h1>
@@ -71,6 +60,7 @@ export default function Home() {
             <p>asdasdasdas</p>
           </Widget.Content>
         </Widget>
+        */}
         <Footer />
       </QuizContainer>
       <GitHubCorner projectUrl='https://github.com/RicardoBaltazar/Quiz-Esportes' />
