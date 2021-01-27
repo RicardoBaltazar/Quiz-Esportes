@@ -21,8 +21,8 @@ function LoadingWidget() {
     )
 }
 
-function QuestionWidget({ question, totalQuestion, questionIndex }) {
-    const questionId = `quastion__${questionIndex}`
+function QuestionWidget({ question, totalQuestion, questionIndex, onSubmit }) {
+    const questionId = `question__${questionIndex}`
     return (
         <>
             <Widget>
@@ -48,7 +48,10 @@ function QuestionWidget({ question, totalQuestion, questionIndex }) {
                         {question.description}
                     </p>
 
-                    <form>
+                    <form onSubmit={(event) => {
+                        event.preventDefault();
+                        onSubmit();
+                    }}>
                     {question.alternatives.map((alternative, alternativeIndex) => {
                         const alternativeId = `alternative __${alternativeIndex}`
                         return (
@@ -59,7 +62,7 @@ function QuestionWidget({ question, totalQuestion, questionIndex }) {
                         )
                     })}
 
-                    <Button >
+                    <Button type='submit'>
                         confirmar
                     </Button>
                     </form>
@@ -79,10 +82,27 @@ const screenStates = {
 
 export default function QuizPage() {
     console.log('Perguntas criadas: ', db.questions)
-    const screenState = screenStates.LOADING;
-    const questionIndex = 0;
+    const [ screenState, setScreenState ] = React.useState(screenStates.LOADING);
+    const [ currentQuestion, setCurrentQuestion ] = React.useState(0);
+    const questionIndex = currentQuestion;
     const totalQuestion = db.questions.length;
     const question = db.questions[questionIndex];
+
+    React.useEffect(() => {
+        setInterval(() =>{
+            setScreenState(screenStates.QUIZ);
+        }, 1 * 500)
+    }, [])
+
+    function handleSubmitQuiz(){
+        const nextQuestion = questionIndex + 1;
+        if(nextQuestion < totalQuestion){
+            setCurrentQuestion(questionIndex + 1);
+        } else {
+            setScreenState(screenState.RESULT);
+        }
+    }
+
     return (
         <QuizBackground backgroundImage={db.bg}>
             <QuizContainer>
@@ -91,6 +111,7 @@ export default function QuizPage() {
                     question={ question }
                     questionIndex={questionIndex}
                     totalQuestion={totalQuestion}
+                    onSubmit={handleSubmitQuiz}
                     />
                 )}
                 {screenState === screenStates.LOADING && <LoadingWidget />}
