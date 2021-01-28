@@ -22,7 +22,11 @@ function LoadingWidget() {
 }
 
 function QuestionWidget({ question, totalQuestion, questionIndex, onSubmit }) {
+    const [ selectedAlternative, setSelectedAlternative ] = React.useState(undefined);
+    const [ isQuestionSubmited, setIsQuestionSubmted ] = React.useState(false);
     const questionId = `question__${questionIndex}`
+    const isCorrect = selectedAlternative === question.answer
+    const HasAlternativeSelected = selectedAlternative !== undefined;
     return (
         <>
             <Widget>
@@ -50,23 +54,32 @@ function QuestionWidget({ question, totalQuestion, questionIndex, onSubmit }) {
 
                     <form onSubmit={(event) => {
                         event.preventDefault();
-                        onSubmit();
+                        setIsQuestionSubmted(true);
+                        setTimeout(() => {
+                            onSubmit();
+                            setIsQuestionSubmted(false);
+                            selectedAlternative(undefined);
+                        }, 1 * 3000);
                     }}>
                     {question.alternatives.map((alternative, alternativeIndex) => {
                         const alternativeId = `alternative __${alternativeIndex}`
                         return (
-                            <Widget.Topic as='label' htmlFor={alternativeId}>
-                                <input id={alternativeId} type='radio' name={questionId}/>
+                            <Widget.Topic as='label' key={alternativeId} htmlFor={alternativeId}>
+                                <input id={alternativeId} type='radio' name={questionId} 
+                                onChange={() => setSelectedAlternative(alternativeIndex)}/>
                                 {alternative}
                             </Widget.Topic>
                         )
                     })}
 
-                    <Button type='submit'>
+                    <Button type='submit' disabled={!HasAlternativeSelected}>
                         confirmar
                     </Button>
                     </form>
 
+                    {/*<p>Alternativa selecionada: {`${selectedAlternative + 1}`}</p>*/}
+                    {isQuestionSubmited && isCorrect && <p>Você Acertou!</p>}
+                    {isQuestionSubmited && !isCorrect && <p>Você Errou!</p>}
                 </Widget.Content>
             </Widget>
 
