@@ -19,7 +19,7 @@
         "image": "https://media.giphy.com/media/oQt5YnUZmXq02ad84u/giphy.gif",
         "title": "Qual a pontuação necessária para uma equipe vencer um set no volei de quadra?",
         "description": "Eita essa eu nem me lembro rsrs...",
-        "answer": 0,
+        "answer": 1,
         "alternatives": [
            "20 pontos",
            "25 pontos com 2 pontos de diferença do adversário",
@@ -27,26 +27,7 @@
            "25 pontos"
         ]
       },
-      {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "",
-        "description": "Faz tempo em haha",
-        "answer": 0,
-        "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
-        ]
-      },
-      {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
-        "answer": 0,
-        "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
-        ]
-      },
+
       {
         "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
         "title": "Como fazer um background gradiente com css?",
