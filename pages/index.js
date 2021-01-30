@@ -75,7 +75,7 @@ export default function Home() {
           </Widget.Content>
         </Widget>
       </QuizContainer>
-      <GitHubCorner projectUrl='https://github.com/RicardoBaltazar/Quiz-Esportes' />
+      <GitHubCorner projectUrl='https://github.com/RicardoBaltazar/Quiz-Matrix' />
     </QuizBackground>
   )
 }
