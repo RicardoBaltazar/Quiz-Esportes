@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Widget = styled.div`
   margin-top: 24px;
   margin-bottom: 24px;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
+  
   background-color: #1c1814;
   border-radius: 4px;
   overflow: hidden;
@@ -23,10 +23,12 @@ const Widget = styled.div`
 
 Widget.Header = styled.header`
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: left;
   padding: 18px 32px;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: #0d0208;
+  color: #008f11;
   
   * {
     margin: 0;
@@ -34,7 +36,8 @@ Widget.Header = styled.header`
 `;
 
 Widget.Content = styled.div`
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background-color: #0d0208;
+  
   padding: 24px 32px 32px 32px;
   & > *:first-child {
     margin-top: 0;
@@ -42,6 +45,12 @@ Widget.Content = styled.div`
   & > *:last-child {
     margin-bottom: 0;
   }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
   ul {
     list-style: none;
     padding: 0;

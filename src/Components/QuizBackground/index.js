@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 const QuizBackground = styled.div`
   width: 100%;
+  display: flex;
+  justify-content: center;
   background-size: cover;
   background-position: center;
   background-image: url(${({ backgroundImage }) => backgroundImage});
@@ -10,6 +12,7 @@ const QuizBackground = styled.div`
   flex: 1;
   @media screen and (max-width: 500px) {
     background-image: none;
+    
     &:after {
       content: "";
       background-size: cover;
@@ -19,7 +22,7 @@ const QuizBackground = styled.div`
         url(${({ backgroundImage }) => backgroundImage});
       display: block;
       width: 100%;
-      height: 100%;
+      height: 110%;
       position: absolute;
       top: 0;
       left: 0;

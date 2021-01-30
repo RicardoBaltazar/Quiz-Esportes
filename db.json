@@ -1,13 +1,15 @@
 {
     "bg": "https://images.unsplash.com/photo-1505250469679-203ad9ced0cb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+    "bg2": "https://media.giphy.com/media/yl3XErRq8qmmA/giphy.gif",
+    "bg3": "https://cdn.pixabay.com/photo/2020/07/02/04/31/matrix-5361690_1280.png",
     "title": "Quiz Esportes",
     "description": "Teste os seus conhecimentos sobre esportes e vamos ver quantas questões você acerta!",
     "questions": [
       {
-        "image": "https://media.giphy.com/media/D43M5jtwc4upq/giphy.gif",
-        "title": "Quantos quartos tem um jogo de basquete?",
-        "description": "Adoro basquete!!",
-        "answer": 2,
+        "image": "https://media.giphy.com/media/uvoECTG2uCTrG/giphy.gif",
+        "title": "Quantos filmes de Matrix foram feitos até hoje?",
+        "description": "",
+        "answer": 0,
         "alternatives": [
           "3",
           "2",
@@ -16,26 +18,54 @@
         ]
       },
       {
-        "image": "https://media.giphy.com/media/oQt5YnUZmXq02ad84u/giphy.gif",
-        "title": "Qual a pontuação necessária para uma equipe vencer um set no volei de quadra?",
-        "description": "Eita essa eu nem me lembro rsrs...",
-        "answer": 1,
+        "image": "https://media.giphy.com/media/3pzLJifxEvLpe/giphy.gif",
+        "title": "Qual o nome do personagem Principal?",
+        "description": "",
+        "answer": 3,
         "alternatives": [
-           "20 pontos",
-           "25 pontos com 2 pontos de diferença do adversário",
-           "22 pontos com 2 pontos de diferença do adversário",
-           "25 pontos"
+           "Bruce Wanne",
+           "Peter Parker",
+           "Jon Snow",
+           "Thomas A. Anderson "
         ]
       },
 
       {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
-        "answer": 0,
+        "image": "https://media.giphy.com/media/1yvoDVJQsTfHi/giphy.gif",
+        "title": "Qual a cor da pílula que Neo toma para saber a verdade?",
+        "description": "",
+        "answer": 2,
         "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+          "Azul",
+          "Verde",
+          "Vermelha",
+          "Preta"
+        ]
+      },
+
+      {
+        "image": "https://media.giphy.com/media/p49dttcTx0FUs/giphy.gif",
+        "title": "Em qual data Matrix foi lançado no brasil?",
+        "description": "",
+        "answer": 1,
+        "alternatives": [
+          "10 de janeiro de 1998",
+          "21 de maio de 1999",
+          "21 de maio de 2000",
+          "12 de junho de 2000"
+        ]
+      },
+
+      {
+        "image": "https://media.giphy.com/media/6xE1FNcorRInS/giphy.gif",
+        "title": "Qual o nome do segunda filme?",
+        "description": "",
+        "answer": 3,
+        "alternatives": [
+          "Matrix",
+          "Matrix Revolution",
+          "Matrix 2",
+          "Matrix Reloaded"
         ]
       }
     ],
@@ -44,8 +74,8 @@
     ],
     "theme": {
       "colors": {
-        "primary": "#14207f",
-        "secondary": "#212121",
+        "primary": "#008f11",
+        "secondary": "#0d0208",
         "tertiary": "#434c98",
         "backgroundColor": "#f9f9f9",
         "button": "#ff3d00",
